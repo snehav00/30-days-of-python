@@ -33,7 +33,6 @@ The goal of this project was to practice functions, conditional logic, loops, us
 * Exception handling
 * `None`
 * Basic arithmetic operators
-* f-strings
 
 ## ▶️ How to Run
 
@@ -78,7 +77,6 @@ Result: 30
 * How `continue` can skip the current loop iteration and start the next one.
 * How `try` / `except` can prevent certain errors from crashing the program.
 * How Python returns `None` when a function doesn't explicitly return a value.
-* How to convert user input from strings into numbers using `float()`.
 
 ## 🧩 Challenges I Faced
 
@@ -86,11 +84,8 @@ One challenge was handling invalid operators without terminating the calculator.
 
 I solved this by checking whether the calculation returned `None` and using `continue` to restart the loop.
 
-Another challenge was handling division by zero using exception handling.
-
 ## 🚀 Future Improvements
 
-* Add exponentiation `**`
 * Add calculation history
 * Add more mathematical operations
 * Improve input validation
