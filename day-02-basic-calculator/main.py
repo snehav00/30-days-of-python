@@ -1,7 +1,5 @@
 print("=====================\n  PYTHON CALCULATOR\n=====================\n")
-a = int(input("Enter first number: "))
-operator = input("Enter operator(+, -, *, /): ")
-b = int(input("Enter second number: "))
+
 
 def calculate(a, operator, b):
     match operator:
@@ -17,6 +15,19 @@ def calculate(a, operator, b):
             print("INVALID OPERATOR!")
             return
 
+try: 
+    again = 'y'
+    use_answer = 'n'
+    while again != 'x':
         
-print(f"\nResult: {calculate(a, operator, b)}")
-    
+        a = int(input("Enter first number: "))
+        operator = input("Enter operator(+, -, *, /): ")
+        b = int(input("Enter second number: "))
+        result = calculate(a, operator, b)
+        print(f"\nResult: {result}")
+        
+        again = (input("Enter 'x' to exit the calculator and any key to continue: ")).lower()
+
+except ValueError:
+    print("INVALID NUMBER")
+
