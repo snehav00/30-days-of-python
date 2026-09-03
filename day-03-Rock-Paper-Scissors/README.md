@@ -59,8 +59,8 @@ Make sure Python 3 is installed on your system.
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone <your-repository-url>
-cd 30-days-of-python/day-03-rock-paper-scissors
+git clone <https://github.com/snehav00/30-days-of-python.git>
+cd 30-days-of-python/day-03-Rock-Paper-Scissors
 ```
 ## Run the program
 
@@ -69,7 +69,7 @@ python main.py
 ```
 
 ## Example
-
+```text
 Welcome to Rock Paper Scissors!
 
 Your choice: rock
@@ -91,7 +91,7 @@ Do you want to play again? (y/n): n
 You: 1
 Computer: 1
 Ties: 0
-
+```
 ## What I Learned
 
 This project helped me strengthen my understanding of:
