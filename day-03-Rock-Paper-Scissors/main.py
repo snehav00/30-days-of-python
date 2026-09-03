@@ -13,21 +13,23 @@ while play_again == 'y':
     computer_choice = random.choice(choices)
     print(f"Computer choice: {computer_choice}")
     
-    computer_index = choices.index(computer_choice)
-    user_index = choices.index(user_choice)
-    
-    if user_index > computer_index or (user_index == 0 and computer_index == 2):
+    if (
+        (user_choice == "rock" and computer_choice == "scissors")
+        or (user_choice == "paper" and computer_choice == "rock")
+        or (user_choice == "scissors" and computer_choice == "paper")
+    ):
         print("\nYou win!")
         user_wins += 1
-    elif computer_index == user_index:
+    elif user_choice == computer_choice:
         print("\nTie")
         ties += 1
     else:
         print("\nComputer wins!")
         computer_wins += 1
     
-    play_again = input("\nDo you want to play again?(y/n): ").lower()
+    play_again = input("\nDo you want to play again?(y/n): ").strip().lower()
     
-print(f"Final scores\n\nYou: {user_wins}\nComputer: {computer_wins}\nTies: {ties}")
+    
+print(f"\n|Final scores|\n\nYou: {user_wins}\nComputer: {computer_wins}\nTies: {ties}")
 
     
