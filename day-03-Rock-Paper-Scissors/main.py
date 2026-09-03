@@ -28,8 +28,10 @@ while play_again == 'y':
         computer_wins += 1
     
     play_again = input("\nDo you want to play again?(y/n): ").strip().lower()
+    while play_again not in ['y', 'n']:
+        print("Invalid input! Enter 'y' or 'n'")
+        play_again = input("\nDo you want to play again?(y/n): ").strip().lower()
     
-    
-print(f"\n|Final scores|\n\nYou: {user_wins}\nComputer: {computer_wins}\nTies: {ties}")
+print(f"\n|Final scores|\n\nYou: {user_wins}\nComputer: {computer_wins}\nTies: {ties}\n")
 
     
