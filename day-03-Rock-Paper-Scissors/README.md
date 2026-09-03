@@ -61,11 +61,12 @@ Clone the repository and navigate to the project directory:
 ```bash
 git clone <your-repository-url>
 cd 30-days-of-python/day-03-rock-paper-scissors
-
+```
 ## Run the program
 
 ```bash
 python main.py
+```
 
 ## Example
 
