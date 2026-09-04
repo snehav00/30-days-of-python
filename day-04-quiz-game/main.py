@@ -57,16 +57,47 @@ math_quiz = [
 
 random.shuffle(movies_quiz)
 print("=============\n|Movies Quiz|\n=============")
+print("Choose the correct option")
 for i, ques in enumerate(movies_quiz):
     print(f"Question {i+1}: {ques["question"]}")
     letters = "ABCD"
     for j, choice in enumerate(ques["choices"].split(", ")):
         print(f"{letters[j]}) {choice}")
+        if choice == ques["answer"]:
+            correct_option = letters[j]
+         
+    while True:
+        user_answer = input("Answer: ").strip().upper()
+        if user_answer in letters:
+            break;
+        print("Invalid choice! Choose from A, B, C, D")
+                    
+    if user_answer == correct_option:
+        print("CORRECT!")
+    else: 
+        print("WRONG!")
+    
+        
+        
     
 random.shuffle(math_quiz)
-print("=============\n|Math Quiz|\n=============")
+print("============\n |Math Quiz|\n============")
+print("Choose the correct option")
 for i, ques in enumerate(math_quiz):
     print(f"Question {i+1}: {ques["question"]}")
     letters = "ABCD"
     for j, choice in enumerate(ques["choices"].split(", ")):
         print(f"{letters[j]}) {choice}")
+        if choice == ques["answer"]:
+            correct_option = letters[j]
+         
+    while True:
+        user_answer = input("Answer: ").strip().upper()
+        if user_answer in letters:
+            break;
+        print("Invalid choice! Choose from A, B, C, D")
+                    
+    if user_answer == correct_option:
+        print("CORRECT!")
+    else: 
+        print("WRONG!")        
