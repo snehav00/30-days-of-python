@@ -62,7 +62,7 @@ Clone the repository and navigate to the project directory:
 git clone <https://github.com/snehav00/30-days-of-python.git>
 cd 30-days-of-python/day-03-Rock-Paper-Scissors
 ```
-## Run the program
+### Run the program
 
 ```bash
 python main.py
