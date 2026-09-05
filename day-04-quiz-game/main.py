@@ -27,6 +27,7 @@ movies_quiz = [
         "answer": "Guitar"
     } 
 ]
+
 math_quiz = [
     {
         "question": "10*5-5*0+5",
@@ -55,53 +56,58 @@ math_quiz = [
     }       
 ]
 
-score = 0
-random.shuffle(movies_quiz)
-print("=============\n|Movies Quiz|\n=============")
-print("Choose the correct option")
-for i, ques in enumerate(movies_quiz):
-    print(f"Question {i+1}: {ques["question"]}")
-    letters = "ABCD"
-    for j, choice in enumerate(ques["choices"].split(", ")):
-        print(f"{letters[j]}) {choice}")
-        if choice == ques["answer"]:
-            correct_option = letters[j]
-         
-    while True:
-        user_answer = input("\nAnswer: ").strip().upper()
-        if user_answer in ['A', 'B', 'C', 'D']:
-            break;
-        print("\nInvalid choice! Choose from A, B, C, D")
-                    
-    if user_answer == correct_option:
-        print("CORRECT!\n")
-        score += 1
-    else: 
-        print("WRONG!\n")
-print(f"Score: {score}/5")
-           
 
-score = 0
-random.shuffle(math_quiz)
-print("============\n |Math Quiz|\n============")
-print("Choose the correct option\n")
-for i, ques in enumerate(math_quiz):
-    print(f"Question {i+1}: {ques["question"]}")
-    letters = "ABCD"
-    for j, choice in enumerate(ques["choices"].split(", ")):
-        print(f"{letters[j]}) {choice}")
-        if choice == ques["answer"]:
-            correct_option = letters[j]
-         
+def game_choice():
     while True:
-        user_answer = input("\nAnswer: ").strip().upper()
-        if user_answer in ['A', 'B', 'C', 'D']:
-            break;
-        print("\nInvalid choice! Choose from A, B, C, D")
-                    
-    if user_answer == correct_option:
-        print("CORRECT!\n")
-        score += 1
-    else: 
-        print("WRONG!\n")        
-print(f"Score: {score}/5")
+        print("Which quiz do you want to play?(Movies/Math)")
+        quiz_choice = input().strip().lower()
+        if quiz_choice == "movies" or quiz_choice == "movie":
+            quiz_choice = movies_quiz
+        elif quiz_choice == "math" or quiz_choice == "maths":
+            quiz_choice = math_quiz
+        else:
+            print("Invalid choice! Choose movies or math\n")
+            continue
+        break
+    return quiz_choice
+
+
+def quiz(quiz_choice):
+    score = 0
+    random.shuffle(quiz_choice)
+    print("=============\n|Python Quiz|\n=============")
+    print("Choose the correct option")
+    for i, ques in enumerate(quiz_choice):
+        print(f"Question {i+1}: {ques['question']}")
+        letters = "ABCD"
+        for j, choice in enumerate(ques["choices"].split(", ")):
+            print(f"{letters[j]}) {choice}")
+            if choice == ques["answer"]:
+                correct_option = letters[j]
+            
+        while True:
+            user_answer = input("\nAnswer: ").strip().upper()
+            if user_answer in ['A', 'B', 'C', 'D']:
+                break
+            print("\nInvalid option! Choose from A, B, C, D")
+                        
+        if user_answer == correct_option:
+            print("CORRECT!\n")
+            score += 1
+        else: 
+            print("WRONG!\n")
+    print(f"Score: {score}/5")
+        
+
+def play():
+    play_again = ""
+    while play_again not in ['y', 'n']:
+        play_again = input("Do you want to play again? Enter (y/n): ").strip().lower()
+    if play_again == 'y':
+        return True
+    return False
+
+game = game_choice()
+quiz(game)
+while play():
+    quiz(game_choice())
