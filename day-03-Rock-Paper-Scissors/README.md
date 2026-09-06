@@ -27,10 +27,6 @@ The player competes against the computer, which randomly selects Rock, Paper, or
 | Same choice | Same choice | Tie |
 | All other combinations | | Computer wins |
 
-## Technologies Used
-
-- Python 3
-- `random` module
 
 ## Concepts Practiced
 
