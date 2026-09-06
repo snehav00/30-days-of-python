@@ -37,6 +37,15 @@ def generate(length):
 def display(password):
     print(f"\nGenerated Password: {password}")
     
+def strength(length):
+    if length<12:
+        print("\nStrength: Medium")
+    elif length<=15:
+        print("\nStrength: Strong")
+    else:
+        print("\nStrength: Very strong")
+        
+    
 def make_another():
     while True:
         again = input("\nDo you want to generate another password?(y/n)").strip().lower()
@@ -51,6 +60,7 @@ while again == 'y':
     length = take_length()
     password = generate(length)
     display(password)
+    strength(length)
     again = make_another()
-else:
-    print("Thanks for using our service!")
+
+print("\nThanks for using our service!")
