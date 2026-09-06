@@ -10,18 +10,18 @@ def take_length():
         except ValueError:
             print("Enter valid length")
             continue
-        if length>=8 and length<=64:
+        if 8 <= length <= 64:
             return length
         print("Password length must be between 8 and 64. ")
 
-uppercase = string.ascii_uppercase
-lowercase = string.ascii_lowercase
-numbers = string.digits
-special = string.punctuation
-
-all_chars = uppercase+lowercase+numbers+special
-
 def generate(length):
+    uppercase = string.ascii_uppercase
+    lowercase = string.ascii_lowercase
+    numbers = string.digits
+    special = string.punctuation
+
+    all_chars = uppercase+lowercase+numbers+special
+    
     password = [
         random.choice(uppercase),
         random.choice(lowercase),
