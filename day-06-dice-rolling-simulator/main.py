@@ -2,16 +2,26 @@ import random
 
 print("Dice rolling simulator\n")
 def dice_number():
-    dice = input("Enter number of dice: ")
-    
+    try:
+        dice = int(input("Enter number of dice: "))
+    except ValueError: 
+        print("Invalid number!")
+    return dice
     
 def sides():
-    sides = input("Enter number of sides in a die: ")
+    try:
+        sides = int(input("Enter number of sides in a die: "))
+    except ValueError: 
+            print("Invalid number!")
+    return sides
     
+def roll_dice(dice, sides):
+    rolls = []
+    for i in range(dice):
+        roll = random.randint(1, sides)
+        rolls.append(roll)
+    return rolls;
 
 
-
-
-dice_number()
-sides()
-
+dice = dice_number()
+sides = sides()
