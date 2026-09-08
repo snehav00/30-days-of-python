@@ -14,6 +14,21 @@ def display(all_tasks):
         else:    
             print(f"Task {i+1}: {item['task']}")
 
+def delete_task(all_tasks):
+    while True:
+        try:
+            task_number = int(input("\nEnter task number to delete: "))
+            
+            if task_number < 1 or task_number > len(all_tasks):
+                print("Invalid task number!")
+                continue
+            break
+        except ValueError:
+            print("Invalid task number!")
+    deleted = all_tasks.pop(task_number-1)
+    print(f"'{deleted['task']}' removed\n")
+    
 
 add_task(all_tasks)
 display(all_tasks)
+delete_task(all_tasks)
