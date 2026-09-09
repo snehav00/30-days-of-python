@@ -36,7 +36,10 @@ def display(rolls):
     for i,roll in enumerate(rolls):
         print(f"Die {i+1}: {roll}")
     total = sum(rolls)
-    print(f"\nTotal: {total}\n")
+    highest = max(rolls)
+    lowest = min(rolls)
+    average = total/len(rolls);
+    print(f"\nTotal: {total}\nHighest roll: {highest}\nLowest roll: {lowest}\nAverage roll: {average:.2f}")
 
 def ask_again():
     while True:
@@ -53,4 +56,4 @@ while again == 'y':
     display(rolls)
     again = ask_again()
 
-print("See you again!")
+print("See you again!\n")
